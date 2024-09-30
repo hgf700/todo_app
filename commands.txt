@@ -1,0 +1,5 @@
+cd Documents/GitHub/todo_app
+node .\todoapp.ts // to activate 
+
+tsc todoapp.ts //to generate js file
+node .\todoapp.js // to actiave project using node.js

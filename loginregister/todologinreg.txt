@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todoapp.css">
+    <title>Todo_app</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> <!-- Dodaj Vue.js -->
+</head>
+<body>
+    
+    <div id="app">
+        <div class="container-login" v-if="!isLoggedIn">
+            <!-- Formularz rejestracji -->
+            <div v-if="isRegisterView">
+                <h2 class="header">Create account</h2>
+                <form @submit.prevent="register">
+                    <div class="content">
+                        <input type="email" id="email" v-model="email" required placeholder="E-mail">
+                    </div>
+                    <div class="content">
+                        <input type="password" id="password" v-model="password" required placeholder="Password">
+                    </div>
+                    <div class="content">
+                        <button type="submit">Sign up</button>
+                    </div>
+                </form>
+                <div class="footer">
+                    <!-- Przełączenie na widok logowania -->
+                    <button @click="toggleView">Already got account? Sign in</button>
+                </div>
+            </div>
+
+            <!-- Formularz logowania -->
+            <div v-else>
+                <h2 class="header">Sign In</h2>
+                <form @submit.prevent="login">
+                    <div class="content">
+                        <input type="email" id="email" v-model="email" required placeholder="E-mail">
+                    </div>
+                    <div class="content">
+                        <input type="password" id="password" v-model="password" required placeholder="Password">
+                    </div>
+                    <div class="content">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+                <div class="footer">
+                    <!-- Przełączenie na widok rejestracji -->
+                    <button @click="toggleView">Don't have an account? Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const app = new Vue({
+    el: '#app',
+    data: {
+        email: '',
+        password: '',
+        isLoggedIn: false,
+        isRegisterView: true // Zmienna kontrolująca widok (początkowo widok rejestracji)
+    },
+    methods: {
+        toggleView() {
+            // Przełącza widok między rejestracją a logowaniem
+            this.isRegisterView = !this.isRegisterView;
+        },
+        login() {
+            // Logika logowania (przykładowa)
+            if (this.email === 'asd' && this.password === 'asd') {
+                this.isLoggedIn = true;
+            } else {
+                alert('Invalid login credentials');
+            }
+        },
+        register() {
+            // Logika rejestracji (przykładowa)
+            alert('Account created successfully');
+            this.isRegisterView = false; // Przełącza na widok logowania po rejestracji
+        }
+    }
+});
+    </script>
+
+    
+</body>
+</html>
+
