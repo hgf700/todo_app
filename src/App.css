@@ -22,7 +22,6 @@ h1{
 }
 
 .header{
-  grid-area: header;
   text-align: center;
   padding: 20px;
   width: 700px;
@@ -30,7 +29,6 @@ h1{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: sticky; 
   top: 0; 
   z-index: 100; 
 }
@@ -98,7 +96,16 @@ ol {
   cursor: pointer;
 }
 
-.delete-button{
+.button-container {
+  display: flex;
+  align-items: center; 
+  background: none;
+  border: none;
+  display: flex;
+  outline: none;
+}
+
+.move-button {
   padding: 3px;
   background: none;
   border: none;
@@ -106,6 +113,35 @@ ol {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-right: 5px; 
+  outline: none;
+}
+
+.move-button svg{
+  transition: 200ms ease;
+}
+
+.move-button:hover svg{
+  fill: #00ff33
+}
+
+.move-button:focus {
+  outline: none; 
+}
+
+.delete-button:focus {
+  outline: none; 
+}
+
+.delete-button {
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
 }
 
 .delete-button svg{
