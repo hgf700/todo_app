@@ -37,6 +37,10 @@ function MiddleContent() {
     }
 
     return (
+        <>
+        <div className="header">
+            <h1>Todo App</h1>
+        </div>
         <div className="container-app">
             <header className="header"/>
             <div className="content">
@@ -95,6 +99,7 @@ function MiddleContent() {
                 </ol>
             </div>
         </div>
+        </>
     );
 }
 
