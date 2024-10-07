@@ -1,0 +1,9 @@
+C:\Users\USER098\Desktop\react\todoapp> npm run dev
+
+PS C:\Users\USER098\Desktop\react> npm create vite@latest
+Need to install the following packages:
+create-vite@5.5.2
+Ok to proceed? (y) y
+√ Project name: ... todoapp
+√ Select a framework: » React
+√ Select a variant: » TypeScript
