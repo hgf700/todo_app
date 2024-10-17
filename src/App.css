@@ -226,11 +226,6 @@ input[type="checkbox"] {
 }
 
 /* conatainer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* conatainer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* conatainer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* conatainer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* conatainer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
 .toggle-sidebar-button {
   position: fixed;
   top: 20px;
@@ -240,9 +235,14 @@ input[type="checkbox"] {
   color: white;
   border: none;
   cursor: pointer;
-  z-index: 1000; /* Aby przycisk był widoczny nad innymi elementami */
+  z-index: 1000;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: left 350ms ease; /* Dodanie animacji przesunięcia */
+}
+
+.toggle-sidebar-button.active {
+  left: 210px; /* Przesunięcie przycisku, gdy sidebar jest otwarty */
+  transition: left 350ms ease;
 }
 
 .toggle-sidebar-button:hover {
@@ -251,18 +251,18 @@ input[type="checkbox"] {
 
 .nav-menu {
   background-color: #060b26;
-  width: 250px;
+  width: 200px;
   height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
   top: 0;
-  left: -100%; /* Sidebar schowany poza ekranem */
+  left: -100%;
   transition: left 350ms ease-in-out;
 }
 
 .nav-menu.active {
-  left: 0; /* Sidebar wysuwa się */
+  left: 0;
 }
 
 .nav-menu-items {
@@ -271,12 +271,13 @@ input[type="checkbox"] {
 
 .navbar-toggle {
   background-color: #060b26;
-  width: 100%;
+  margin-top: auto;
+  width: 90%;
   height: 80px;
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px;
+  cursor: pointer;
 }
 
 span {
