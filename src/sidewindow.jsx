@@ -1,64 +1,47 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+import './sidewindow.css';
+// import Calendar from './calendar.jsx'; 
+import Todomain from './todomains.jsx'; 
 
-function SideWindow() {
-  const [sidebar, setSidebar] = useState(false);
-  const [activeView, setActiveView] = useState(''); // Dodaj stan do zarządzania aktywnym widokiem
+function SideWindow({ sidebarOpen, setSidebarOpen }) {
+  const [activeView, setActiveView] = useState(''); // Stan aktywnego widoku
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   const renderContent = () => {
-    // Funkcja do renderowania widoku w zależności od aktywnego widoku
     switch (activeView) {
-      case 'Upcoming':
-        return <div>Upcoming tasks go here</div>;
-      case 'Today':
-        return <div>Today's tasks go here</div>;
-      case 'Late':
-        return <div>Late tasks go here</div>;
-      case 'Statistics':
-        return <div>Statistics view</div>;
+      case 'TodoApp':
+        return <Todomain />;
       case 'Calendar':
-        return <div>Calendar view</div>;
-      case 'Notes':
-        return <div>Notes view</div>;
+        return <Calendar />;
       default:
         return <div>Select a view from the menu</div>;
     }
   };
 
   return (
-    <div className="app-container">
-      {/* Sidebar i przycisk */}
-      <button className={sidebar ? 'toggle-sidebar-button active' : 'toggle-sidebar-button'} onClick={showSidebar}>
-        {sidebar ? 'Zamknij Sidebar' : 'Otwórz Sidebar'}
+    <div className="side-container">
+      <button 
+        className={sidebarOpen ? 'toggle-sidebar-button active' : 'toggle-sidebar-button'}
+        onClick={toggleSidebar}
+      >
+        {sidebarOpen ? 'Zamknij Sidebar' : 'Otwórz Sidebar'}
       </button>
 
-      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+      <nav className={sidebarOpen ? 'nav-menu active' : 'nav-menu'}>
         <ul className="nav-menu-items">
-          <li className="navbar-toggle" onClick={() => setActiveView('Upcoming')}>
-            <span>Upcoming</span>
-          </li>
-          <li className="navbar-toggle" onClick={() => setActiveView('Today')}>
-            <span>Today</span>
-          </li>
-          <li className="navbar-toggle" onClick={() => setActiveView('Late')}>
-            <span>Late</span>
-          </li>
-          <li className="navbar-toggle" onClick={() => setActiveView('Statistics')}>
-            <span>Statistics</span>
+          <li className="navbar-toggle" onClick={() => setActiveView('TodoApp')}>
+            <span>TodoApp</span>
           </li>
           <li className="navbar-toggle" onClick={() => setActiveView('Calendar')}>
             <span>Calendar</span>
           </li>
-          <li className="navbar-toggle" onClick={() => setActiveView('Notes')}>
-            <span>Notes</span>
-          </li>
         </ul>
       </nav>
 
-      {/* Zawartość po prawej stronie */}
-      <div className="content">
+      <div className={sidebarOpen ? 'content content-reduced' : 'content'}>
         {renderContent()}
       </div>
     </div>

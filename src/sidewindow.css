@@ -1,0 +1,72 @@
+/* Standardowa szerokość content */
+.content {
+  width: 100%;
+  transition: width 350ms ease;
+}
+
+/* Zmniejszona szerokość content, gdy sidebar jest aktywny */
+.content-reduced {
+  width: 80%;
+}
+
+/* Ustawienia sidebar */
+.nav-menu {
+  background-color: #060b26;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: left 350ms ease-in-out;
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+/* Przycisk toggle sidebar */
+.toggle-sidebar-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #060b26;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 4px;
+  transition: left 350ms ease;
+}
+
+.toggle-sidebar-button.active {
+  left: 210px;
+}
+
+.toggle-sidebar-button:hover {
+  background-color: #1a83ff;
+}
+
+/* Elementy w sidebarze */
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #060b26;
+  margin-top: auto;
+  width: 90%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+}
+
+span {
+  color: white;
+  font-size: 18px;
+  margin-left: 16px;
+}
