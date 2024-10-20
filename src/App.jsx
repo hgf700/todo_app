@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="app-container">
       <SideWindow sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      <MiddleContent sidebarOpen={sidebarOpen} />
+      <div className={`middle-content ${sidebarOpen ? 'reduced-width' : ''}`}>
+        <MiddleContent sidebarOpen={sidebarOpen} />
+      </div>
     </div>
   );
 }

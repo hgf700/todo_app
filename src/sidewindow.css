@@ -1,13 +1,3 @@
-/* Standardowa szerokość content */
-.content {
-  width: 100%;
-  transition: width 350ms ease;
-}
-
-/* Zmniejszona szerokość content, gdy sidebar jest aktywny */
-.content-reduced {
-  width: 80%;
-}
 
 /* Ustawienia sidebar */
 .nav-menu {
@@ -18,12 +8,12 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  left: -100%;
-  transition: left 350ms ease-in-out;
+  left: -200px; /* Początkowo ukryte poza ekranem */
+  transition: left 350ms ease-in-out; /* Płynna animacja */
 }
 
 .nav-menu.active {
-  left: 0;
+  left: 0; /* Sidebar widoczny na ekranie */
 }
 
 .toggle-sidebar-button {
@@ -41,13 +31,19 @@
 }
 
 .toggle-sidebar-button.active {
-  left: 210px;
+  left: 210px; /* Przesunięcie przy otwartym sidebarze */
 }
 
 .toggle-sidebar-button:hover {
   background-color: #1a83ff;
 }
 
+/* Zmniejszenie szerokości contentu w zależności od stanu sidebara */
+.middle-content.reduced-width {
+  margin-left: 100px; /* Dopasowanie przesunięcia gdy sidebar jest aktywny */
+}
+
+/* Dodatkowe style dla elementów nawigacyjnych */
 .nav-menu-items {
   width: 100%;
 }
