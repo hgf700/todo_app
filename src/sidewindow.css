@@ -26,7 +26,6 @@
   left: 0;
 }
 
-/* Przycisk toggle sidebar */
 .toggle-sidebar-button {
   position: fixed;
   top: 20px;
@@ -49,7 +48,6 @@
   background-color: #1a83ff;
 }
 
-/* Elementy w sidebarze */
 .nav-menu-items {
   width: 100%;
 }
