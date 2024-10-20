@@ -4,7 +4,7 @@ import MiddleContent from './todomains.jsx';
 import SideWindow from './sidewindow.jsx'; 
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Globalny stan sidebaru
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="app-container">

@@ -1,227 +1,228 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  --backgground: #101114;
-  --primary-color:#1C1D20;
-  --secondary-color:#4A4D57;
-  --accent-color:#00FFC4;
-  --text-color:#F9F9F9;
-}
-
-h1{
-  margin-top: 100px;
-  margin-bottom: 20px;
-  font-size: 3rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--accent-color);
-}
-
-.header{
-  text-align: center;
-  padding: 20px;
-  width: 700px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  top: 0; 
-  z-index: 100; 
-}
-
-#todo-input{
-  box-sizing: border-box;
-  padding: 12px 20px;
-  width: 100%;
-  background: none;
-  border: 2px solid var(--secondary-color);
-  border-radius: 1000px;
-  font: inherit;
-  color: var(--text-color);
-  caret-color: var(--accent-color);
-}
-
-#todo-input:focus{
-  outline: none;
-}
-
-form{
-  position: relative;
-}
-
-#add-button{
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: var(--accent-color);
-  height: 100%;
-  padding: 0 30px;
-  border: none;
-  border-radius: 1000px;
-  font: inherit;
-  font-weight: 600;
-  color: var(--backgground);
-  cursor: pointer;
-}
-
-ol {
-  padding: 0;
-  margin: 0;
-  width: 100%; /* Dostosuj szerokość do elementu nadrzędnego */
-  list-style-type: none; 
-}
-
-.todo {
-  display: flex;
-  justify-content: space-between; /* Rozmieść elementy na całej szerokości */
-  align-items: center; 
-  margin-bottom: 10px;
-  padding: 0 16px;
-  background-color: var(--primary-color);
-  margin-top: 10px;
-  border-radius: 15px;
-}
-
-
-.todo .todo-text{
-  padding: 15px;
-  padding-right: 0;
-  flex-grow: 1;
-  transition: 200ms ease;
-  cursor: pointer;
-}
-
-.button-container {
-  display: flex;
-  align-items: center; 
-  background: none;
-  border: none;
-  display: flex;
-  outline: none;
-}
-
-.move-button {
-  padding: 3px;
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-right: 5px; 
-  outline: none;
-}
-
-.move-button svg{
-  transition: 200ms ease;
-}
-
-.move-button:hover svg{
-  fill: var(--accent-color);
-}
-
-.move-button:focus {
-  outline: none; 
-}
-
-.delete-button:focus {
-  outline: none; 
-}
-
-.delete-button {
-  padding: 3px;
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  outline: none;
-}
-
-.delete-button svg{
-  transition: 200ms ease;
-}
-
-.delete-button:hover svg{
-  fill: #ff0033
-}
-
-.custom-checkbox-container {
-  display: flex;
-  align-items: center;
-}
-
-.custom-checkbox {
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-  min-height: 20px;
-  min-width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  transition: 200ms ease;
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked + .custom-checkbox {
-  background-color: var(--accent-color);
-}
-
-input[type="checkbox"]:checked + .custom-checkbox + .todo-text {
-  text-decoration: line-through;
-  color: var(--secondary-color);
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-
-@media(max-width: 500px){
-  html{
-      font-size: 12pt;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    --backgground: #101114;
+    --primary-color:#1C1D20;
+    --secondary-color:#4A4D57;
+    --accent-color:#00FFC4;
+    --text-color:#F9F9F9;
   }
-  #add-button{
-      position: unset;
-      width: 100%;
-      margin-top: 10px;
-      padding: 15px;
-      height: auto;
-  }
+  
   h1{
-      margin-top: 50px ;
-      font-size: 15vw;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--accent-color);
   }
-}
-
-.content{
-  grid-area: content;
-  text-align: center; 
-  margin-left: auto;
-  margin-top: 10px;
-  margin-bottom: auto;
-}
-
-.footer{
-  grid-area: footer;
-  text-align: center; 
-  margin-top: 20px;
-  margin-bottom: auto;
-}
-
-.container-app {
-  display: grid;
-  grid-template-areas: 
-    "sidebarWindow header"
-    "content"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  font-family: 'Montserrat', sans-serif;
-  height: 100vh;
-}
+  
+  .header{
+    text-align: center;
+    padding: 20px;
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 0; 
+    z-index: 100; 
+  }
+  
+  #todo-input{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+  }
+  
+  #todo-input:focus{
+    outline: none;
+  }
+  
+  form{
+    position: relative;
+  }
+  
+  #add-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--backgground);
+    cursor: pointer;
+  }
+  
+  ol {
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Dostosuj szerokość do elementu nadrzędnego */
+    list-style-type: none; 
+  }
+  
+  .todo {
+    display: flex;
+    justify-content: space-between; /* Rozmieść elementy na całej szerokości */
+    align-items: center; 
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    margin-top: 10px;
+    border-radius: 15px;
+  }
+  
+  
+  .todo .todo-text{
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 200ms ease;
+    cursor: pointer;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center; 
+    background: none;
+    border: none;
+    display: flex;
+    outline: none;
+  }
+  
+  .move-button {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 5px; 
+    outline: none;
+  }
+  
+  .move-button svg{
+    transition: 200ms ease;
+  }
+  
+  .move-button:hover svg{
+    fill: var(--accent-color);
+  }
+  
+  .move-button:focus {
+    outline: none; 
+  }
+  
+  .delete-button:focus {
+    outline: none; 
+  }
+  
+  .delete-button {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .delete-button svg{
+    transition: 200ms ease;
+  }
+  
+  .delete-button:hover svg{
+    fill: #ff0033
+  }
+  
+  .custom-checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-checkbox {
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 200ms ease;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: var(--accent-color);
+  }
+  
+  input[type="checkbox"]:checked + .custom-checkbox + .todo-text {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  
+  @media(max-width: 500px){
+    html{
+        font-size: 12pt;
+    }
+    #add-button{
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+    }
+    h1{
+        margin-top: 50px ;
+        font-size: 15vw;
+    }
+  }
+  
+  .content{
+    grid-area: content;
+    text-align: center; 
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: auto;
+  }
+  
+  .footer{
+    grid-area: footer;
+    text-align: center; 
+    margin-top: 20px;
+    margin-bottom: auto;
+  }
+  
+  .container-app {
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "content content"
+      "footer footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+  }
+  

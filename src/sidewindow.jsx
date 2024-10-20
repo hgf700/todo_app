@@ -1,6 +1,5 @@
-import React from 'react';
-import './sidewindow.css';
-// import Calendar from './calendar.jsx'; 
+import React, { useState } from 'react'; // Upewnij się, że useState jest importowane
+import './sidewindow.css'; 
 import Todomain from './todomains.jsx'; 
 
 function SideWindow({ sidebarOpen, setSidebarOpen }) {
@@ -15,9 +14,8 @@ function SideWindow({ sidebarOpen, setSidebarOpen }) {
       case 'TodoApp':
         return <Todomain />;
       case 'Calendar':
-        return <Calendar />;
-      default:
-        return <div>Select a view from the menu</div>;
+        return <div>calendar a view from the menu</div>;
+
     }
   };
 
