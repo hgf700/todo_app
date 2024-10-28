@@ -1,23 +1,9 @@
-import React, { useState } from 'react';
-import './sidewindow.css'; 
-import Todomain from './todomains.jsx'; 
-import Calendar from './calendar.jsx';
+import React from 'react';
+import './sidewindow.css';
 
-function SideWindow({ sidebarOpen, setSidebarOpen }) {
-  const [activeView, setActiveView] = useState(''); // Stan aktywnego widoku
-
+function SideWindow({ sidebarOpen, setSidebarOpen, setActiveView }) {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-  };
-
-  const renderContent = () => {
-    switch (activeView) {
-      case 'TodoApp':
-        return <Todomain />;
-      case 'Calendar':
-        return <Calendar/>;
-
-    }
   };
 
   return (
@@ -39,10 +25,6 @@ function SideWindow({ sidebarOpen, setSidebarOpen }) {
           </li>
         </ul>
       </nav>
-
-      <div className={sidebarOpen ? 'content content-reduced' : 'content'}>
-        {renderContent()}
-      </div>
     </div>
   );
 }

@@ -36,6 +36,7 @@ function MiddleContent({ sidebarOpen }) {
         }
     }
 
+
     return (
         <div className={sidebarOpen ? 'middle-content reduced-width' : 'middle-content'}>
             <div className="header">
