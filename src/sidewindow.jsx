@@ -1,6 +1,7 @@
-import React, { useState } from 'react'; // Upewnij się, że useState jest importowane
+import React, { useState } from 'react';
 import './sidewindow.css'; 
 import Todomain from './todomains.jsx'; 
+import Calendar from './calendar.jsx';
 
 function SideWindow({ sidebarOpen, setSidebarOpen }) {
   const [activeView, setActiveView] = useState(''); // Stan aktywnego widoku
@@ -14,7 +15,7 @@ function SideWindow({ sidebarOpen, setSidebarOpen }) {
       case 'TodoApp':
         return <Todomain />;
       case 'Calendar':
-        return <div>calendar a view from the menu</div>;
+        return <Calendar/>;
 
     }
   };
