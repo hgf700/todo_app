@@ -1,3 +1,9 @@
+# ToDo App
+
+A simple multi-page ToDo application built with **React** and **Vite**.
+
+Includes a collapsible (slide-out) sidebar for navigation and task management.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
